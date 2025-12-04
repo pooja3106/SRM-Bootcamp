@@ -1,0 +1,16 @@
+POINT DISTINCT BINARY STRING WITHOUT CONSECUTIVE ONES 
+
+  public class Main
+{
+    public static int CountBinaryString (int n)
+    {
+        if (n==0) return 0;
+        if (n==1) return 2;
+        if (n==2) return 3;
+        return CountBinaryString (n-1) + CountBinaryString( n - 2);
+    }
+	public static void main(String[] args) {
+	    int n=6;
+		System.out.println("No.of Binary String of length" + n + "with no consecutive ones's:" + CountBinaryString(n));
+	}
+}
