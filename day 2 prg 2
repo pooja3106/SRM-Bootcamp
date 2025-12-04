@@ -1,0 +1,13 @@
+TO ROTATE A STRING :
+
+class Solution {
+public boolean rotateString(string s, string goal) {
+        
+        if(s.length() != goal.length()) {
+            return false ;
+        }
+
+        string doubleS = s+s;
+        return doubleS.contains(goal);
+     }
+}
