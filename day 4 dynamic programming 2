@@ -1,0 +1,22 @@
+class Solution {
+//memoization
+    private int recursive(int n ,int curr,int [] dp ){
+        //base condition
+        if (curr == n){
+            return 1;
+        }
+        if(curr > n){
+            return 0;
+        }
+
+        if(dp[curr] != -1 ) return dp[curr];
+        //logic
+        return dp [curr] = recursive(n, curr + 1,dp) + recursive(n, curr + 2, dp);
+    }
+    public int climbStairs(int n) {
+        int[] dp = new int [n + 1];
+        Arrays.fill (dp, -1);
+        return recursive(n, 0 , dp);
+        
+    }
+}
